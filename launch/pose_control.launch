@@ -1,0 +1,17 @@
+<launch>
+
+
+    <rosparam file="$(find pose_control)/cfg/pose_control_params.yaml"/>
+
+    <node name="pose_control_node"
+        pkg="pose_control"
+        type="pose_control_node"
+        output="screen">
+
+	<remap from="mission" to="/pose_control/misison"/>
+    <remap from="cmd_vel" to="/soybot/cmd_vel"/>
+    <remap from="odom" to="/odom"/>
+
+	</node>
+
+</launch>
